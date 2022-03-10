@@ -10,10 +10,10 @@
         <Label Content="Add Person" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top" Width="128" FontSize="16"/>
         <Label Content="List people" HorizontalAlignment="Left" Margin="230,30,0,0" VerticalAlignment="Top" Width="128" FontSize="16"/>
         <Label Content="First name" HorizontalAlignment="Left" Margin="34,82,0,0" VerticalAlignment="Top" Width="128" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Margin="34,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" BorderBrush="#FF0E3DCA"/>
+        <TextBox Name="firstNameText" HorizontalAlignment="Left" Margin="34,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" BorderBrush="#FF0E3DCA"/>
         <Label Content="Last name" HorizontalAlignment="Left" Margin="34,142,0,0" VerticalAlignment="Top" Width="128" FontSize="14"/>
-        <TextBox HorizontalAlignment="Left" Margin="34,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" BorderBrush="#FF0E3DCA"/>
-        <Button Content="Add person" HorizontalAlignment="Left" Margin="34,234,0,0" VerticalAlignment="Top" Width="120" Height="36" FontSize="14"/>
+        <TextBox Name="lastNameText" HorizontalAlignment="Left" Margin="34,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" BorderBrush="#FF0E3DCA"/>
+        <Button Click="addPersonButton_Click" Content="Add person" HorizontalAlignment="Left" Margin="34,234,0,0" VerticalAlignment="Top" Width="120" Height="36" FontSize="14"/>
         <Button Click="refrechListButton_Click" Content="Refresh list" HorizontalAlignment="Left" Margin="34,275,0,0" VerticalAlignment="Top" Width="120" Height="36" FontSize="14"/>
         <ListBox Name="listPeopleListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="230,71,369,71" FontSize="14"/>
 
