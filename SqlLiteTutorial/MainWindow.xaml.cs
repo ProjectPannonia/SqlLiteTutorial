@@ -32,5 +32,9 @@ namespace SqlLiteTutorial
             listPeopleListBox.DataContext = people;
             listPeopleListBox.DisplayMemberPath = "FullName";
         }
+        private void refrechListButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
