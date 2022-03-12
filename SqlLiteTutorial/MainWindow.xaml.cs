@@ -34,16 +34,16 @@ namespace SqlLiteTutorial
             listPeopleListBox.ItemsSource = people;
             listPeopleListBox.DisplayMemberPath = "FullName";
         }
-        private void refrechListButton_Click(object sender, EventArgs e)
-        {
-            LoadPeopleList();
-        }
         private void addPersonButton_Click(object sender, EventArgs e)
         {
             people.Add(new Person { FirstName = firstNameText.Text, LastName = lastNameText.Text });
             firstNameText.Text = "";
             lastNameText.Text = "";
             WireUpPeopleList();
+        }
+        private void refrechListButton_Click(object sender, EventArgs e)
+        {
+            LoadPeopleList();
         }
     }
 }
