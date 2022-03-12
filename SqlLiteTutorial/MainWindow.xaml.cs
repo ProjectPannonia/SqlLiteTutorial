@@ -21,10 +21,12 @@ namespace SqlLiteTutorial
 
         private void LoadPeopleList()
         {
+            /*
             people.Add(new Person { FirstName = "Tim", LastName = "Corey" });
             people.Add(new Person { FirstName = "John", LastName = "Doe" });
             people.Add(new Person { FirstName = "Mary", LastName = "Smith" });
-
+            */
+            people = SqliteDataAccess.LoadPeople();
             WireUpPeopleList();
         }
 
@@ -36,7 +38,14 @@ namespace SqlLiteTutorial
         }
         private void addPersonButton_Click(object sender, EventArgs e)
         {
-            people.Add(new Person { FirstName = firstNameText.Text, LastName = lastNameText.Text });
+            //people.Add(new Person { FirstName = firstNameText.Text, LastName = lastNameText.Text });
+            SqliteDataAccess.SavePerson(
+                new Person { 
+                    FirstName = firstNameText.Text, 
+                    LastName = lastNameText.Text 
+                }
+            );
+            
             firstNameText.Text = "";
             lastNameText.Text = "";
             WireUpPeopleList();
