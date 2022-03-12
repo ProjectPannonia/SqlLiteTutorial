@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SqlLiteTutorial"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="549">
+        Title="Person manager" Height="450" Width="549">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="229*"/>
