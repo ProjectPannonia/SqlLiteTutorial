@@ -48,7 +48,8 @@ namespace SqlLiteTutorial
             
             firstNameText.Text = "";
             lastNameText.Text = "";
-            WireUpPeopleList();
+            //WireUpPeopleList();
+            LoadPeopleList();
         }
         private void refrechListButton_Click(object sender, EventArgs e)
         {
