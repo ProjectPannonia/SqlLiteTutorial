@@ -9,11 +9,13 @@ namespace SqlLiteTutorial
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<Person> people = new List<Person>();
+        List<Person> people;
 
         public MainWindow()
         {
             InitializeComponent();
+            people = new List<Person>();
+            
             LoadPeopleList();
         }
 
@@ -28,9 +30,7 @@ namespace SqlLiteTutorial
 
         private void WireUpPeopleList()
         {
-            //listPeopleListBox.DataContext = null;
-            //listPeopleListBox.DataContext = people;
-            
+            listPeopleListBox.ItemsSource = null;
             listPeopleListBox.ItemsSource = people;
             listPeopleListBox.DisplayMemberPath = "FullName";
         }
@@ -40,15 +40,10 @@ namespace SqlLiteTutorial
         }
         private void addPersonButton_Click(object sender, EventArgs e)
         {
-            Person p = new Person();
-            p.FirstName = firstNameText.Text;
-            p.LastName = lastNameText.Text;
-
-            people.Add(p);
-            WireUpPeopleList();
-
+            people.Add(new Person { FirstName = firstNameText.Text, LastName = lastNameText.Text });
             firstNameText.Text = "";
             lastNameText.Text = "";
+            WireUpPeopleList();
         }
     }
 }

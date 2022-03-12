@@ -7,15 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Add Person" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top" Width="128" FontSize="16"/>
-        <Label Content="List people" HorizontalAlignment="Left" Margin="230,30,0,0" VerticalAlignment="Top" Width="128" FontSize="16"/>
-        <Label Content="First name" HorizontalAlignment="Left" Margin="34,82,0,0" VerticalAlignment="Top" Width="128" FontSize="14"/>
-        <TextBox Name="firstNameText" HorizontalAlignment="Left" Margin="34,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" BorderBrush="#FF0E3DCA"/>
-        <Label Content="Last name" HorizontalAlignment="Left" Margin="34,142,0,0" VerticalAlignment="Top" Width="128" FontSize="14"/>
-        <TextBox Name="lastNameText" HorizontalAlignment="Left" Margin="34,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" BorderBrush="#FF0E3DCA"/>
-        <Button Click="addPersonButton_Click" Content="Add person" HorizontalAlignment="Left" Margin="34,234,0,0" VerticalAlignment="Top" Width="120" Height="36" FontSize="14"/>
-        <Button Click="refrechListButton_Click" Content="Refresh list" HorizontalAlignment="Left" Margin="34,275,0,0" VerticalAlignment="Top" Width="120" Height="36" FontSize="14"/>
-        <ListBox Name="listPeopleListBox" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="230,71,369,71" FontSize="14"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="141*"/>
+            <ColumnDefinition Width="659*"/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Add Person" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top" Width="128" FontSize="16" Grid.ColumnSpan="2"/>
+        <Label Content="List people" HorizontalAlignment="Left" Margin="89,30,0,0" VerticalAlignment="Top" Width="128" FontSize="16" Grid.Column="1"/>
+        <Label Content="First name" HorizontalAlignment="Left" Margin="34,82,0,0" VerticalAlignment="Top" Width="128" FontSize="14" Grid.ColumnSpan="2"/>
+        <TextBox Name="firstNameText" HorizontalAlignment="Left" Margin="34,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" BorderBrush="#FF0E3DCA" Grid.ColumnSpan="2"/>
+        <Label Content="Last name" HorizontalAlignment="Left" Margin="34,142,0,0" VerticalAlignment="Top" Width="128" FontSize="14" Grid.ColumnSpan="2"/>
+        <TextBox Name="lastNameText" HorizontalAlignment="Left" Margin="34,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" BorderBrush="#FF0E3DCA" Grid.ColumnSpan="2"/>
+        <Button Click="addPersonButton_Click" Content="Add person" HorizontalAlignment="Left" Margin="34,234,0,0" VerticalAlignment="Top" Width="120" Height="36" FontSize="14" Grid.ColumnSpan="2"/>
+        <Button Click="refrechListButton_Click" Content="Refresh list" HorizontalAlignment="Left" Margin="34,275,0,0" VerticalAlignment="Top" Width="120" Height="36" FontSize="14" Grid.ColumnSpan="2"/>
+        <ListBox Name="listPeopleListBox" Margin="89,71,369,71" FontSize="14" Grid.Column="1"/>
 
     </Grid>
 </Window>
