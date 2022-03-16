@@ -1,12 +1,10 @@
 ﻿using Dapper;
-using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 
 namespace SqlLiteTutorial
 {
@@ -27,6 +25,21 @@ namespace SqlLiteTutorial
                 cnn.Execute("insert into Person (FirstName, LastName) " +
                     "values (@FirstName, @LastName)", person);
             }
+        }
+        public static int GetPerson()
+        {
+            bool isReserved = true;
+            string userName = "Adam";
+            int id= 0;
+            using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                //id = cnn.Execute("SELECT Id FROM Person WHERE FirstName Like 'Valami'");
+                string name = cnn.Execute("SELECT p.LastName As PersonId FROM Person p WHERE p.FirstName = 'valami'").ToString();
+                //string firstname = cnn.Execute("SELECT FirstName FROM Person WHERE LastName = 'Cser'").ToString();
+                MessageBox.Show(name);
+                    string valami = cnn.Query("SELECT p.LastName As PersonId FROM Person p WHERE p.FirstName = 'valami'");
+            }
+            return id;
         }
         private static string LoadConnectionString(string id = "Default")
         {

@@ -55,5 +55,10 @@ namespace SqlLiteTutorial
         {
             LoadPeopleList();
         }
+
+        private void GetPerson(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(SqliteDataAccess.GetPerson().ToString());
+        }
     }
 }
