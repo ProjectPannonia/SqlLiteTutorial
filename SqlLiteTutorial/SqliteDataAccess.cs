@@ -31,13 +31,25 @@ namespace SqlLiteTutorial
             bool isReserved = true;
             string userName = "Adam";
             int id= 0;
+            /*
             using (IDbConnection cnn = new SQLiteConnection(LoadConnectionString()))
             {
                 //id = cnn.Execute("SELECT Id FROM Person WHERE FirstName Like 'Valami'");
                 string name = cnn.Execute("SELECT p.LastName As PersonId FROM Person p WHERE p.FirstName = 'valami'").ToString();
                 //string firstname = cnn.Execute("SELECT FirstName FROM Person WHERE LastName = 'Cser'").ToString();
                 MessageBox.Show(name);
-                    string valami = cnn.Query("SELECT p.LastName As PersonId FROM Person p WHERE p.FirstName = 'valami'");
+                //string valami = cnn.Query("SELECT p.LastName As PersonId FROM Person p WHERE p.FirstName = 'valami'");
+            }
+            */
+            using(SQLiteConnection cnn = new SQLiteConnection(LoadConnectionString()))
+            {
+                cnn.Open();
+                SQLiteCommand cmd = new SQLiteCommand("SELECT Id FROM Person WHERE FirstName = 'Valami'",cnn);
+                SQLiteDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    MessageBox.Show(reader.GetInt32(0).ToString());
+                }
             }
             return id;
         }
